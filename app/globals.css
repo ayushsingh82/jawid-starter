@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  /* Keeping Celo-like theme as requested */
+  --brand-green: #01b73e;
+  --silver: #737373;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-green: var(--brand-green);
+  --color-silver: var(--silver);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.text-brand-green {
+  color: var(--brand-green);
+}
+.border-brand-green {
+  border-color: var(--brand-green);
+}
+.bg-brand-green {
+  background-color: var(--brand-green);
+}
+.text-silver {
+  color: var(--silver);
+}
+
+.btn-black {
+  background-color: transparent;
+  color: #000000;
+  border: 1px solid #000000;
+}
+.btn-black:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn-brand {
+  background-color: transparent;
+  color: var(--brand-green);
+  border: 1px solid var(--brand-green);
+}
+.btn-brand:hover {
+  background-color: var(--brand-green);
+  color: #ffffff;
+}
+
+.section-container {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.card-subtle {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.25rem;
+}
+
+.underline-curve {
+  position: relative;
+  display: inline-block;
+}
+.underline-curve::after {
+  content: "";
+  position: absolute;
+  left: -0.02em;
+  right: -0.02em;
+  bottom: -0.18em;
+  height: 0.55em;
+  border-bottom: 0.16em solid var(--brand-green);
+  border-radius: 999px;
+  transform: rotate(-2.2deg);
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+@media (min-width: 768px) {
+  .card-subtle {
+    padding: 1.75rem 1.75rem;
+  }
+}
