@@ -33,7 +33,7 @@ export function JawDemo() {
             disabled={!hasKey || isConnecting}
             type="button"
           >
-            {hasKey ? (isConnecting ? "Connecting…" : "Connect wallet") : "Add API key"}
+            {isConnecting ? "Connecting…" : "Connect wallet"}
           </button>
         ) : (
           <button
@@ -57,23 +57,33 @@ export function JawDemo() {
 
         {!hasKey ? (
           <p className="mt-3 text-sm text-black/65">
-            Set <code>NEXT_PUBLIC_JAW_API_KEY</code> in <code>.env.local</code> to enable
-            the demo.
+            API key not configured for this deployment.{" "}
+            <a
+              className="font-medium text-brand-green hover:opacity-80"
+              href={createKeyUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Create one on the JAW dashboard
+            </a>
+            .
           </p>
         ) : null}
 
-        <p className="mt-3 text-sm text-black/65">
-          Need an API key?{" "}
-          <a
-            className="font-medium text-brand-green hover:opacity-80"
-            href={createKeyUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Create one on the JAW dashboard
-          </a>
-          .
-        </p>
+        {!hasKey ? (
+          <p className="mt-3 text-sm text-black/65">
+            Need an API key?{" "}
+            <a
+              className="font-medium text-brand-green hover:opacity-80"
+              href={createKeyUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Create one on the JAW dashboard
+            </a>
+            .
+          </p>
+        ) : null}
 
         {isConnected ? (
           <div className="mt-4 flex flex-col gap-3 sm:flex-row">

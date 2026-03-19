@@ -50,7 +50,7 @@ export const config = createConfig({
       core: `import { JAW } from '@jaw.id/core';
 
 const jaw = JAW.create({
-  apiKey: process.env.JAW_API_KEY!,
+  apiKey: process.env.NEXT_PUBLIC_JAW_API_KEY!,
   appName: 'My App',
 });
 
